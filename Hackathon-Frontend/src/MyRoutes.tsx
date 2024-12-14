@@ -6,10 +6,10 @@ import HomePage from './component/Pages/Home'
 import Navhome from './component/Pages/Navhome'
 import HospitalRegistrationForm from './component/Pages/RegistratiinForm'
 import MedicineForm from './component/Pages/MedicationForm'
-import DiagnosisForm from './component/Pages/DiagnosisForm'
 import CheckUpDetails from './component/Pages/CheckUps'
-import SelfInformation from './component/SelfInformation'
 import AddPatientForm from './component/Pages/AddPatient'
+import SelfInformation from './component/SelfInformation'
+import DiagnosisForm from './component/Pages/DiagnosisForm'
 
 function MyRoutes() {
   return (
@@ -22,9 +22,9 @@ function MyRoutes() {
         <Route path='/login' element={<LoginPage />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/register' element={<HospitalRegistrationForm />} />
-        <Route path='/medication' element={<MedicineForm />} />
-        <Route path='/diagnosis' element={<DiagnosisForm />} />
-        <Route path='/checkup' element={<CheckUpDetails />} />
+        <Route path='/medication:patientId' element={<MedicineForm />} />
+        <Route path='/diagnosis' element={< DiagnosisForm/>} />
+        <Route path='/checkup:patientId' element={<CheckUpDetails />} />
         <Route path='/selfinfo' element={<SelfInformation />} />
         <Route path='/addpatient' element={<AddPatientForm />} />
       </Routes>

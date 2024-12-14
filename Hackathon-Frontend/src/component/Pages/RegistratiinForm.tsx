@@ -105,6 +105,7 @@ const HospitalRegistrationForm: React.FC = () => {
           >
             <Input placeholder="Enter contact number" />
           </Form.Item>
+          
 
           {/* Email Address */}
           <Form.Item
