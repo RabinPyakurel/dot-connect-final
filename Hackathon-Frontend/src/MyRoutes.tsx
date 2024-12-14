@@ -23,15 +23,9 @@ function MyRoutes() {
         <Route path='/login' element={<LoginPage />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/register' element={<HospitalRegistrationForm />} />
-<<<<<<< HEAD
         <Route path='/medication:patientId' element={<MedicineForm />} />
         <Route path='/diagnosis' element={< DiagnosisForm/>} />
         <Route path='/checkup:patientId' element={<CheckUpDetails />} />
-=======
-        <Route path='/mdetails/:patientId' element={<MedicineForm />} />
-        <Route path='/diagnosis/:patientId' element={<DiagnosisForm />} />
-        <Route path='/cdetails/:patientId' element={<CheckUpDetails />} />
->>>>>>> 5daa23fa968d854d2c0ecd1b556b4c340219bdc7
         <Route path='/selfinfo' element={<SelfInformation />} />
         <Route path='/addpatient' element={<AddPatientForm />} />
       </Routes>

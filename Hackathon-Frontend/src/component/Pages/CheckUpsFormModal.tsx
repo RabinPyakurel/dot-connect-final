@@ -1,8 +1,11 @@
 import { Button, Form, Input, message } from "antd";
 import { Dispatch, SetStateAction } from "react";
-import { CheckUpInformationControllerService, CheckUpInformationDto } from "../../services/openapi";
-import Title from 'antd/es/typography/Title';
-import Modal from 'react-bootstrap/Modal';
+import {
+  CheckUpInformationControllerService,
+  CheckUpInformationDto,
+} from "../../services/openapi";
+import Title from "antd/es/typography/Title";
+import Modal from "react-bootstrap/Modal";
 
 interface ICheckUpFormModalProps {
   isOpen: boolean;
@@ -10,12 +13,15 @@ interface ICheckUpFormModalProps {
   patientId: string | null;
 }
 
-function CheckUpFormModal({isOpen, onClose, patientId}: ICheckUpFormModalProps) {
-
+function CheckUpFormModal({
+  isOpen,
+  onClose,
+  patientId,
+}: ICheckUpFormModalProps) {
   const handleClose = () => onClose(false);
 
   const [form] = Form.useForm();
-  
+
   const handleSubmit = async (values: CheckUpInformationDto) => {
     try {
       values.patientId = patientId!;
@@ -29,10 +35,8 @@ function CheckUpFormModal({isOpen, onClose, patientId}: ICheckUpFormModalProps) 
 
   return (
     <>
-
       <Modal show={isOpen} onHide={handleClose}>
-        <Modal.Header closeButton>
-        </Modal.Header>
+        <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
           <div style={styles.container}>
             <Title level={3} style={styles.title}>
@@ -48,7 +52,9 @@ function CheckUpFormModal({isOpen, onClose, patientId}: ICheckUpFormModalProps) 
               <Form.Item
                 label="Date Visited"
                 name="dateVisited"
-                rules={[{ required: true, message: "Please select the visit date!" }]}
+                rules={[
+                  { required: true, message: "Please select the visit date!" },
+                ]}
               >
                 <Input type="date" style={styles.input} />
               </Form.Item>
@@ -57,23 +63,40 @@ function CheckUpFormModal({isOpen, onClose, patientId}: ICheckUpFormModalProps) 
               <Form.Item
                 label="Reason of Visit"
                 name="reason"
-                rules={[{ required: true, message: "Please enter the reason for the visit!" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter the reason for the visit!",
+                  },
+                ]}
               >
-                <Input placeholder="Enter the reason for visit" style={styles.input} />
+                <Input
+                  placeholder="Enter the reason for visit"
+                  style={styles.input}
+                />
               </Form.Item>
 
               {/* Next Follow-up Date Field */}
               <Form.Item
                 label="Next Follow-up Date"
                 name="followUpDate"
-                rules={[{ required: true, message: "Please select the follow-up date!" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please select the follow-up date!",
+                  },
+                ]}
               >
                 <Input type="date" style={styles.input} />
               </Form.Item>
 
               {/* Submit Button */}
               <Form.Item>
-                <Button type="primary" htmlType="submit" style={styles.saveButton}>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  style={styles.saveButton}
+                >
                   Save
                 </Button>
               </Form.Item>
@@ -91,7 +114,7 @@ function CheckUpFormModal({isOpen, onClose, patientId}: ICheckUpFormModalProps) 
 // Inline styles
 const styles = {
   container: {
-    height:"100%",
+    height: "100%",
     width: "80%",
     borderRadius: "12px",
     margin: "auto",

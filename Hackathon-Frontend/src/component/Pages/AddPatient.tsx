@@ -8,7 +8,10 @@ import {
   message,
 } from "antd";
 import React from "react";
-import { PatientInformationControllerService, PatientInformationDto } from "../../services/openapi";
+import {
+  PatientInformationControllerService,
+  PatientInformationDto,
+} from "../../services/openapi";
 import Navbar from "./Navbar";
 
 const { Title } = Typography;
@@ -23,13 +26,9 @@ const AddPatientForm: React.FC = () => {
       await PatientInformationControllerService.save(values);
       message.success("Patient data saved successfully!");
       form.resetFields();
-    }
-    catch {
+    } catch {
       message.error("error while saving patient information");
     }
-
-
-
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -94,124 +93,32 @@ const AddPatientForm: React.FC = () => {
                 },
               ]}
             >
-<<<<<<< HEAD
-              <Form.Item
-                label="First Name"
-                name="firstName"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input the patient's first name!",
-                  },
-                ]}
-              >
-                <Input placeholder="Enter first name" />
-              </Form.Item>
-  
-              <Form.Item
-                label="Last Name"
-                name="lastName"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input the patient's last name!",
-                  },
-                ]}
-              >
-                <Input placeholder="Enter last name" />
-              </Form.Item>
-  
-              <Form.Item
-                label="Date of Birth"
-                name="dateOfBirth"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please select the patient's date of birth!",
-                  },
-                ]}
-              >
-                <DatePicker style={{ width: "100%" }} />
-              </Form.Item>
-  
-              <Form.Item
-                label="NID Number"
-                name="citizenshipNumber"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input the patient's NID number!",
-                  },
-                  { pattern: /^\d+$/, message: "NID must contain only numbers." },
-                ]}
-              >
-                <Input placeholder="Enter NID number" />
-              </Form.Item>
-  
-              <Form.Item
-                label="Gender"
-                name="gender"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please select the patient's gender!",
-                  },
-                ]}
-              >
-                <Select placeholder="Select gender">
-                  <Option value="male">Male</Option>
-                  <Option value="female">Female</Option>
-                  <Option value="other">Other</Option>
-                </Select>
-              </Form.Item>
-  
-              <Form.Item
-                label="Phone Number"
-                name="phoneNumber"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input the patient's phone number!",
-                  },
-                  {
-                    pattern: /^\d{10}$/,
-                    message: "Phone number must be 10 digits.",
-                  },
-                ]}
-              >
-                <Input placeholder="Enter phone number" />
-              </Form.Item>
-  
-              <Form.Item
-                label="Blood Group"
-                name="bloodGroup"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please select the patient Blood Group!",
-                  },
-                ]}
-              >
-                <Select placeholder="Select Blood Group">
-                  <Option value="A+">A+</Option>
-                  <Option value="A-">A-</Option>
-                  
-                  <Option value="O+">O+</Option>
-                  <Option value="O-">O-</Option>
-                  <Option value="B+">B+</Option>
-                  <Option value="B-">B-</Option>
-                  <Option value="AB+">AB+</Option>
-                  <Option value="AB-">AB-</Option>
-                </Select>
-              </Form.Item>
-              <Form.Item>
-                <Button type="primary" htmlType="submit" block>
-                  Submit
-                </Button>
-              </Form.Item>
-            </Form>
-          </div>
-=======
+              <Input placeholder="Enter Last name" />
+            </Form.Item>
+
+            <Form.Item
+              label="First Name"
+              name="firstName"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input the patient's first name!",
+                },
+              ]}
+            >
+              <Input placeholder="Enter first name" />
+            </Form.Item>
+
+            <Form.Item
+              label="Last Name"
+              name="lastName"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input the patient's last name!",
+                },
+              ]}
+            >
               <Input placeholder="Enter last name" />
             </Form.Item>
 
@@ -298,16 +205,15 @@ const AddPatientForm: React.FC = () => {
                 <Option value="AB-">AB-</Option>
               </Select>
             </Form.Item>
-
             <Form.Item>
               <Button type="primary" htmlType="submit" block>
                 Submit
               </Button>
             </Form.Item>
           </Form>
->>>>>>> 5daa23fa968d854d2c0ecd1b556b4c340219bdc7
         </div>
       </div>
+      <div />
     </Navbar>
   );
 };
