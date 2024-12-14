@@ -7,6 +7,8 @@ import Navhome from './component/Pages/Navhome'
 import HospitalRegistrationForm from './component/Pages/RegistratiinForm'
 import MedicineForm from './component/Pages/MedicationForm'
 import DiagnosisForm from './component/Pages/DiagnosisForm'
+import CheckUpDetails from './component/Pages/CheckUps'
+import SelfInformation from './component/Selfinformation'
 
 function MyRoutes ()  {
   return (
@@ -21,8 +23,8 @@ function MyRoutes ()  {
             <Route path='/register' element={<HospitalRegistrationForm/>}/>
             <Route path='/medication' element={<MedicineForm/>}/>
             <Route path='/diagnosis' element={<DiagnosisForm/>}/>
-            
-            
+            <Route path='/checkup' element={<CheckUpDetails/>}/>
+            <Route path='/selfinfo' element={<SelfInformation/>}/>
             </Routes>
     </BrowserRouter>
   )

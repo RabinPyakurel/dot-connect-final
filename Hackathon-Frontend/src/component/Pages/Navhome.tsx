@@ -20,15 +20,17 @@ const Navhome: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
       <Layout style={{ height: "100vh", background: "#f0f2f5" }}>
         <Header
           style={{
+            
+            // border:"2px solid red",
             background: "#001529",
             color: "#fff",
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "center",
             alignItems: "center",
             padding: "0 20px",
           }}
         >
-          <text style={{ color: "#fff", fontSize: "20px" }}>
+          <text style={{ color: "#fff", fontSize: "30px",fontWeight:"900" }}>
             DOT.Connect Medical History Repository
           </text>
         </Header>
