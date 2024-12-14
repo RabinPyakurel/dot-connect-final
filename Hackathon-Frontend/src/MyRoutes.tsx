@@ -9,6 +9,7 @@ import MedicineForm from './component/Pages/MedicationForm'
 import DiagnosisForm from './component/Pages/DiagnosisForm'
 import CheckUpDetails from './component/Pages/CheckUps'
 import SelfInformation from './component/Selfinformation'
+import AddPatientForm from './component/Pages/AddPatient'
 
 function MyRoutes ()  {
   return (
@@ -25,6 +26,7 @@ function MyRoutes ()  {
             <Route path='/diagnosis' element={<DiagnosisForm/>}/>
             <Route path='/checkup' element={<CheckUpDetails/>}/>
             <Route path='/selfinfo' element={<SelfInformation/>}/>
+            <Route path='/addpatient' element={<AddPatientForm/>}/>
             </Routes>
     </BrowserRouter>
   )

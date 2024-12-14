@@ -23,7 +23,7 @@ const HomePage = () => {
       }
       if (event.data.value) {
         localStorage.setItem("NID", event.data.value);
-        navigate("/self-information");
+        navigate("/selfinfo");
       }
     });
   };
@@ -50,7 +50,7 @@ const HomePage = () => {
                       <Button type="primary" onClick={openLoginPage} style={{marginTop:"10px"}}>
                         Patient Login <UserOutlined /> 
                       </Button>
-                      <Link to={"/agency-login"}>
+                      <Link to={"/login"}>
                         <Button type="primary" style={{marginTop:"10px", marginBottom:"12px"}}>
                           Agency Login <SafetyCertificateOutlined />
                         </Button>

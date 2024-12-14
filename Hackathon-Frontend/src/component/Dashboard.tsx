@@ -50,7 +50,7 @@ import Navbar from "./Pages/Navbar";
       const Navigate = useNavigate();
     
       const handleButtonClick = () => {
-        Navigate('/AddPatient');
+        Navigate('/addpatient');
       };
   
     // Simulated logged-in agency
