@@ -4,6 +4,9 @@ import Dashboard from './component/Dashboard'
 import LoginPage from './component/Login'
 import HomePage from './component/Pages/Home'
 import Navhome from './component/Pages/Navhome'
+import HospitalRegistrationForm from './component/Pages/RegistratiinForm'
+import MedicineForm from './component/Pages/MedicationForm'
+import DiagnosisForm from './component/Pages/DiagnosisForm'
 
 function MyRoutes ()  {
   return (
@@ -15,7 +18,12 @@ function MyRoutes ()  {
             <Route path='/navhome' element={<Navhome/>}/>
             <Route path='/login' element={<LoginPage/>}/>
             <Route path='/dashboard' element={<Dashboard/>}/>
-        </Routes>
+            <Route path='/register' element={<HospitalRegistrationForm/>}/>
+            <Route path='/medication' element={<MedicineForm/>}/>
+            <Route path='/diagnosis' element={<DiagnosisForm/>}/>
+            
+            
+            </Routes>
     </BrowserRouter>
   )
 }
