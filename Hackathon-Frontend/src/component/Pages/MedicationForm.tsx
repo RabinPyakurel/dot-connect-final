@@ -1,12 +1,14 @@
 import { Button, DatePicker, Form, Input, Typography, message } from "antd";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { MedicationControllerService, MedicationDto } from "../../services/openapi";
 import Navbar from "./Navbar";
 
 const { Title } = Typography;
 
 const MedicineForm: React.FC = () => {
+  const location = useLocation()
+  console.log(location.state)
   const [form] = Form.useForm();
   let { patientId } = useParams();
 
@@ -23,6 +25,7 @@ const MedicineForm: React.FC = () => {
         message.error("error while saving medicataion information")
       }
   };
+
   return (
     <Navbar>
 

@@ -7,24 +7,25 @@ import { jwtDecode } from "jwt-decode";
 import AppFooter from "../AppFooter";
 const Navbar: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
 
-    const navigate = useNavigate();
-    const[hospitalName,setHospitalName]=useState()
+  const navigate = useNavigate();
+  const [hospitalName, setHospitalName] = useState()
 
-    const logout=()=>{
-      localStorage.removeItem("authtoken")
-      navigate('/');
-    };
-    const  back=()=>{
-      navigate('/dashboard');
-    };
-    useEffect(() => {
-      const token = localStorage.getItem('authtoken'); // Replace with your token storage method
-  
-      if (token) {
-        const decodedToken = jwtDecode(token) as any ;
-        setHospitalName(decodedToken.name);
-      }
-    }, []);
+  const logout = () => {
+    localStorage.removeItem("authtoken")
+    navigate('/');
+  };
+  const back = () => {
+    console.log('go back called')
+    navigate(-1);
+  };
+  useEffect(() => {
+    const token = localStorage.getItem('authtoken'); // Replace with your token storage method
+
+    if (token) {
+      const decodedToken = jwtDecode(token) as any;
+      setHospitalName(decodedToken.name);
+    }
+  }, []);
   return (
     <>
       <Layout style={{ height: "100vh", background: "#f0f2f5" }}>
@@ -63,7 +64,7 @@ const Navbar: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
         </Header>
         <div>{children}</div>
       </Layout>
-        <AppFooter></AppFooter>
+      <AppFooter></AppFooter>
     </>
   );
 };
