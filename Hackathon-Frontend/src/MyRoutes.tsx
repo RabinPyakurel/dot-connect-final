@@ -18,13 +18,14 @@ function MyRoutes() {
       <Routes>
         <Route path='/navbar' element={<Navbar />}></Route>
         <Route path='/' element={<HomePage />} />
+        
         <Route path='/navhome' element={<Navhome />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/register' element={<HospitalRegistrationForm />} />
-        <Route path='/medication' element={<MedicineForm />} />
-        <Route path='/diagnosis' element={<DiagnosisForm />} />
-        <Route path='/checkup' element={<CheckUpDetails />} />
+        <Route path='/mdetails/:patientId' element={<MedicineForm />} />
+        <Route path='/diagnosis/:patientId' element={<DiagnosisForm />} />
+        <Route path='/cdetails/:patientId' element={<CheckUpDetails />} />
         <Route path='/selfinfo' element={<SelfInformation />} />
         <Route path='/addpatient' element={<AddPatientForm />} />
       </Routes>
