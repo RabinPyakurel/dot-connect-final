@@ -62,8 +62,8 @@ const Navbar: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
           </div>
         </Header>
         <div>{children}</div>
-        <AppFooter></AppFooter>
       </Layout>
+        <AppFooter></AppFooter>
     </>
   );
 };
