@@ -1,67 +1,54 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>National Identification System - Nepal Government</title>
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-            rel="stylesheet">
-        <style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Identification System - Nepal Government</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
         body {
             background-color: #f0f4f8;
         }
     </style>
-    </head>
-    <body class="flex items-center justify-center min-h-screen">
-        <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-8">
-            <div class="text-center mb-6">
-                <img style="height: 100px;" src="LOGO.png"
-                    alt="Nepal Government Logo"
-                    class="mx-auto mb-4 ">
-                <h1 class="text-2xl font-bold text-gray-800">Patient Login</h1>
-                <!-- <p class="text-gray-600">Access Dot Connect Services Online</p> -->
-            </div>
+</head>
 
-            <form id="loginForm" class="space-y-4">
-                <div>
-                    <label for="nationalId"
-                        class="block text-sm font-medium text-gray-700">National
-                        ID Number</label>
-                    <input
-                        type="text"
-                        id="nationalId"
-                        name="nationalId"
-                        required
-                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                        placeholder="Enter your National ID">
-                </div>
-
-                <div>
-                    <label for="password"
-                        class="block text-sm font-medium text-gray-700">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        required
-                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                        placeholder="Enter your password">
-                </div>
-
-                <div>
-                    <button
-                        type="submit"
-                        class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        Login
-                    </button>
-                </div>
-            </form>
-
-            <div id="loginStatus" class="mt-4 text-center"></div>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-8">
+        <div class="text-center mb-6">
+            <img style="height: 100px;" src="LOGO.png" alt="Nepal Government Logo" class="mx-auto mb-4 ">
+            <h1 class="text-2xl font-bold text-gray-800">Patient Login</h1>
+            <!-- <p class="text-gray-600">Access Dot Connect Services Online</p> -->
         </div>
 
-        <script>
+        <form id="loginForm" class="space-y-4">
+            <div>
+                <label for="nationalId" class="block text-sm font-medium text-gray-700">National
+                    ID Number</label>
+                <input type="text" id="nationalId" name="nationalId" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                    placeholder="Enter your National ID">
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                    placeholder="Enter your password">
+            </div>
+
+            <div>
+                <button type="submit"
+                    class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    Login
+                </button>
+            </div>
+        </form>
+
+        <div id="loginStatus" class="mt-4 text-center"></div>
+    </div>
+
+    <script>
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const loginStatus = document.getElementById('loginStatus');
@@ -72,13 +59,14 @@
 
             try {
                 // Note: Replace with actual API endpoint
-                const apiurl="https://dotconnectbackend.onrender.com";
-                const response = await fetch(apiurl+'/api/self-information?citizenshipNumber='+nationalId, {
+                //const apiurl="https://dotconnectbackend.onrender.com";
+                const apiurl = "http://localhost:8080";
+                const response = await fetch(apiurl + '/api/self-information?citizenshipNumber=' + nationalId, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
                     }
-                  
+
                 });
 
                 const data = await response.json();
@@ -90,9 +78,9 @@
                         </p>
                     `;
                     if (window.opener) {
-          window.opener.postMessage({ value: nationalId }, window.location.origin);
-        }
-        window.close(); // Close the popup
+                        window.opener.postMessage({ value: nationalId }, window.location.origin);
+                    }
+                    window.close(); // Close the popup
                     // Optionally redirect or update UI after successful login
                 } else {
                     loginStatus.innerHTML = `
@@ -111,9 +99,6 @@
             }
         });
     </script>
-    </body>
+</body>
+
 </html>
-
-
-
-   

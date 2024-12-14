@@ -20,7 +20,8 @@ export type OpenAPIConfig = {
 };
 
 export const OpenAPI: OpenAPIConfig = {
-    BASE: 'https://dotconnectbackend.onrender.com',
+    //BASE: 'https://dotconnectbackend.onrender.com',
+    BASE: 'http://localhost:8080',
     VERSION: '1.0',
     WITH_CREDENTIALS: false,
     CREDENTIALS: 'include',
