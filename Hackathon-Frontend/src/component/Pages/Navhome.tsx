@@ -29,7 +29,7 @@ const Navhome: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
           }}
         >
           <text style={{ color: "#fff", fontSize: "20px" }}>
-            dotConnect Medical History Repository
+            DOT.Connect Medical History Repository
           </text>
         </Header>
         <div>{children}</div>
