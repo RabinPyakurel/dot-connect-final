@@ -33,8 +33,8 @@ const Navhome: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
           </text>
         </Header>
         <div>{children}</div>
-      </Layout>
         <AppFooter></AppFooter>
+      </Layout>
     </>
   );
 };

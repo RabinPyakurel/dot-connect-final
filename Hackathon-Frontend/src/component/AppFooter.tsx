@@ -24,7 +24,7 @@ const AppFooter: React.FC = () => {
           margin: "0 auto",
         }}
       >
-        <Text style={{ color: "#fff" }}>
+        <Text style={{ color: "#fff"}}>
           © {new Date().getFullYear()} dotConnect Medical History Repository.
           All rights reserved.
         </Text>

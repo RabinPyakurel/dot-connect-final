@@ -149,13 +149,13 @@ import Navbar from "./Pages/Navbar";
   
     return (
       <>
-      <Navbar>
   
+      <Navbar>  
       <Layout style={{ background: "#f0f2f5" }}>
         
   
   
-        <Content style={{ padding: "20px", height:"100vh" }}>
+        <Content style={{ padding: "20px" }}>
           <Card className=" d-flex justify-content-center">
             <Form layout="inline" onFinish={onSearch}>
               <Form.Item
@@ -297,7 +297,6 @@ import Navbar from "./Pages/Navbar";
               </div>)}
             </Card>
           )}
-        {/* <AboutUs/> */}
         </Content>
       </Layout>
       </Navbar>
