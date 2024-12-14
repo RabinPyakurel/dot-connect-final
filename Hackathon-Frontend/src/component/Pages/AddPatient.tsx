@@ -97,32 +97,6 @@ const AddPatientForm: React.FC = () => {
             </Form.Item>
 
             <Form.Item
-              label="First Name"
-              name="firstName"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input the patient's first name!",
-                },
-              ]}
-            >
-              <Input placeholder="Enter first name" />
-            </Form.Item>
-
-            <Form.Item
-              label="Last Name"
-              name="lastName"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input the patient's last name!",
-                },
-              ]}
-            >
-              <Input placeholder="Enter last name" />
-            </Form.Item>
-
-            <Form.Item
               label="Date of Birth"
               name="dateOfBirth"
               rules={[

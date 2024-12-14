@@ -15,8 +15,8 @@ const Navbar: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
     navigate('/');
   };
   const back = () => {
-    console.log('go back called')
-    navigate(-1);
+    navigate('/dashboard');
+    window.location.reload();
   };
   useEffect(() => {
     const token = localStorage.getItem('authtoken'); // Replace with your token storage method
