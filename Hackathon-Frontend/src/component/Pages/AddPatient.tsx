@@ -9,7 +9,7 @@ import {
   } from "antd";
   import React from "react";
   import { PatientInformationControllerService, PatientInformationDto } from "../../services/openapi";
-import Navbar from "./Navbar";
+  import Navbar from "./Navbar";
   
   const { Title } = Typography;
   const { Option } = Select;
@@ -17,7 +17,7 @@ import Navbar from "./Navbar";
   const AddPatientForm: React.FC = () => {
     const [form] = Form.useForm();
   
-    const onFinish = async (values: PatientInformationDto) => {
+    const onFinish = async(values: PatientInformationDto) => {
       console.log("Patient Data Submitted:", values);
       try{
         await PatientInformationControllerService.save(values);
@@ -25,7 +25,7 @@ import Navbar from "./Navbar";
         form.resetFields();
       }
       catch{
-        message.error("error while saving patient information")
+        message.error("error while saving patient information");
       }
   
     
